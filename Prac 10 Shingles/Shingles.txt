@@ -1,0 +1,32 @@
+def read_integer():
+    # Read the value of k-1
+    k_minus_1 = int(input("Enter value of k-1: "))
+
+    # Check if the file exists
+    file_path = "E:/Documents/Pictures/Shingles.txt"
+    try:
+        with open(file_path, "r") as file:
+            lines = [line.strip() for line in file.readlines() if line.strip()]
+    except FileNotFoundError:
+        print("Error: File not found.")
+        return None
+
+    # Check if the file is empty
+    if not lines:
+        print("Error: The file is empty.")
+        return None
+
+    shingles = []
+    for i in range(len(lines) - k_minus_1 + 1):
+        shingle = lines[i:i + k_minus_1]
+        shingles.append(shingle)
+
+    print(shingles)
+
+# Call the function
+read_integer()
+
+
+
+Shingles.txt
+Have you just completed your high school studies? Are you looking for training in Science and Arts? Or are you interested in Vocational Studies? Let us guide in this amazing quest for knowledge with a variety of subjects which has a knowledge spectrum from Biological Science to Language studies, Sociology to Environmental Science, Computer Science to Political Science. Explore a brand-new world of information, practical training, and expert guidance.Do you want to shape your careers with courses in Science, Biological Science, Applied Science? Or want to make an impact in society with courses in humanities, psychology, literature? Or become a skilled employee with our vocational training programmes in Green House Management, Pharma Analytical Sciences and Tourism and Travel Management? Then go ahead and click here to enter the new world for knowledge and skill training programmes.
