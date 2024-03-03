@@ -1,9 +1,9 @@
 #create .csv file with random dataset(Rating,Price,ALcohol,Sulphate,pH)
 dt = read.csv(file.choose())
 head(dt)
-new_data <- dt[, -which(name(dt) == "pH")]
+new_data <- dt[, -which(names(dt) == "pH")]
 new_data
-c1<-kmean(new_data,3)
+c1<-kmeans(new_data,3)
 c1
 data <- new_data
 wss<- sapply(1:15, function(k){kmeans(data ,k) $tot.withinss})
